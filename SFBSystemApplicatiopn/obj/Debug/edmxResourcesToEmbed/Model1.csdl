@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportsFacilityBookingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Availability">
+    <Key>
+      <PropertyRef Name="AvailabilityID" />
+    </Key>
+    <Property Name="AvailabilityID" Type="Int32" Nullable="false" />
+    <Property Name="SportFacilityID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SlotID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TimeSlot" Relationship="Self.FK__Availabil__SlotI__1A14E395" FromRole="Availability" ToRole="TimeSlots" />
+    <NavigationProperty Name="SportFacility" Relationship="Self.FK__Availabil__Sport__1920BF5C" FromRole="Availability" ToRole="SportFacilities" />
+    <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__Availab__1DE57479" FromRole="Availability" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="BookingID" />
+      <PropertyRef Name="AvailabilityID" />
+    </Key>
+    <Property Name="BookingID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AvailabilityID" Type="Int32" Nullable="false" />
+    <Property Name="BookingDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ActualUsedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BookingStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Availability" Relationship="Self.FK__Booking__Availab__1DE57479" FromRole="Booking" ToRole="Availability" />
+    <NavigationProperty Name="Member" Relationship="Self.FK__Booking__MemberI__1CF15040" FromRole="Booking" ToRole="Member" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MemberStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__MemberI__1CF15040" FromRole="Member" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="SportFacility">
+    <Key>
+      <PropertyRef Name="SportFacilityID" />
+    </Key>
+    <Property Name="SportFacilityID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SportTypeID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SportFacilityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FacilityStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Availabilities" Relationship="Self.FK__Availabil__Sport__1920BF5C" FromRole="SportFacilities" ToRole="Availability" />
+    <NavigationProperty Name="SportType" Relationship="Self.FK__SportFaci__Sport__145C0A3F" FromRole="SportFacilities" ToRole="SportType" />
+  </EntityType>
+  <EntityType Name="SportType">
+    <Key>
+      <PropertyRef Name="SportTypeID" />
+    </Key>
+    <Property Name="SportTypeID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SportTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="SportFacilities" Relationship="Self.FK__SportFaci__Sport__145C0A3F" FromRole="SportType" ToRole="SportFacilities" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TimeSlot">
+    <Key>
+      <PropertyRef Name="SlotID" />
+    </Key>
+    <Property Name="SlotID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SlotName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Availabilities" Relationship="Self.FK__Availabil__SlotI__1A14E395" FromRole="TimeSlots" ToRole="Availability" />
+  </EntityType>
+  <Association Name="FK__Availabil__SlotI__1A14E395">
+    <End Role="TimeSlots" Type="Self.TimeSlot" Multiplicity="1" />
+    <End Role="Availability" Type="Self.Availability" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TimeSlots">
+        <PropertyRef Name="SlotID" />
+      </Principal>
+      <Dependent Role="Availability">
+        <PropertyRef Name="SlotID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Availabil__Sport__1920BF5C">
+    <End Role="SportFacilities" Type="Self.SportFacility" Multiplicity="1" />
+    <End Role="Availability" Type="Self.Availability" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SportFacilities">
+        <PropertyRef Name="SportFacilityID" />
+      </Principal>
+      <Dependent Role="Availability">
+        <PropertyRef Name="SportFacilityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Booking__Availab__1DE57479">
+    <End Role="Availability" Type="Self.Availability" Multiplicity="1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Availability">
+        <PropertyRef Name="AvailabilityID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="AvailabilityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Booking__MemberI__1CF15040">
+    <End Role="Member" Type="Self.Member" Multiplicity="1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SportFaci__Sport__145C0A3F">
+    <End Role="SportType" Type="Self.SportType" Multiplicity="1" />
+    <End Role="SportFacilities" Type="Self.SportFacility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SportType">
+        <PropertyRef Name="SportTypeID" />
+      </Principal>
+      <Dependent Role="SportFacilities">
+        <PropertyRef Name="SportTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SportsFacilityBookingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Availabilities" EntityType="Self.Availability" />
+    <EntitySet Name="Bookings" EntityType="Self.Booking" />
+    <EntitySet Name="Members" EntityType="Self.Member" />
+    <EntitySet Name="SportFacilities" EntityType="Self.SportFacility" />
+    <EntitySet Name="SportTypes" EntityType="Self.SportType" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TimeSlots" EntityType="Self.TimeSlot" />
+    <AssociationSet Name="FK__Availabil__SlotI__1A14E395" Association="Self.FK__Availabil__SlotI__1A14E395">
+      <End Role="TimeSlots" EntitySet="TimeSlots" />
+      <End Role="Availability" EntitySet="Availabilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Availabil__Sport__1920BF5C" Association="Self.FK__Availabil__Sport__1920BF5C">
+      <End Role="SportFacilities" EntitySet="SportFacilities" />
+      <End Role="Availability" EntitySet="Availabilities" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Booking__Availab__1DE57479" Association="Self.FK__Booking__Availab__1DE57479">
+      <End Role="Availability" EntitySet="Availabilities" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Booking__MemberI__1CF15040" Association="Self.FK__Booking__MemberI__1CF15040">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SportFaci__Sport__145C0A3F" Association="Self.FK__SportFaci__Sport__145C0A3F">
+      <End Role="SportType" EntitySet="SportTypes" />
+      <End Role="SportFacilities" EntitySet="SportFacilities" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

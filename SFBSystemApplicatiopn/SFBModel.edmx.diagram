@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cec4be6550c144a3878a4554a156c09b" Name="Diagram1">
+        <EntityTypeShape EntityType="SportsFacilityBookingModel.Availability" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsFacilityBookingModel.Booking" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsFacilityBookingModel.Member" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsFacilityBookingModel.SportFacility" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsFacilityBookingModel.SportType" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsFacilityBookingModel.TimeSlot" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="SportsFacilityBookingModel.FK__Availabil__SlotI__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsFacilityBookingModel.FK__Availabil__Sport__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsFacilityBookingModel.FK__Booking__Availab__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsFacilityBookingModel.FK__Booking__MemberI__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsFacilityBookingModel.FK__SportFaci__Sport__145C0A3F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

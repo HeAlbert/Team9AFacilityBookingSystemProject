@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3051F200-0E61-488F-9648-BF786001C89C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SFBSystemApplicatiopn</RootNamespace>
+    <AssemblyName>SFBSystemApplicatiopn</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Availability.cs">
+      <DependentUpon>SFBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Booking.cs">
+      <DependentUpon>SFBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\BookingControl.cs" />
+    <Compile Include="CancelBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelBooking.Designer.cs">
+      <DependentUpon>CancelBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\CancelBookingControl.cs" />
+    <Compile Include="Controller\CreateNewSportFacilityControl.cs" />
+    <Compile Include="Controller\EnquiryFacilityControl.cs" />
+    <Compile Include="Controller\MaintainFacilityControl.cs" />
+    <Compile Include="Controller\MaintianMemberControl.cs" />
+    <Compile Include="Controller\MainControl.cs" />
+    <Compile Include="CreateNewSportsFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewSportsFacility.Designer.cs">
+      <DependentUpon>CreateNewSportsFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnquirySportsFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnquirySportsFacility.Designer.cs">
+      <DependentUpon>EnquirySportsFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookingFacility.Designer.cs">
+      <DependentUpon>BookingFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewMember.Designer.cs">
+      <DependentUpon>CreateNewMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\NewMemberControl.cs" />
+    <Compile Include="Member.cs">
+      <DependentUpon>SFBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchFacility.Designer.cs">
+      <DependentUpon>SearchFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchMember.Designer.cs">
+      <DependentUpon>SearchMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainMember.Designer.cs">
+      <DependentUpon>MaintainMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainSportsFacility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainSportsFacility.Designer.cs">
+      <DependentUpon>MaintainSportsFacility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SFBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SFBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SFBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SFBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SFBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SFBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SportFacility.cs">
+      <DependentUpon>SFBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SportType.cs">
+      <DependentUpon>SFBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeSlot.cs">
+      <DependentUpon>SFBModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CancelBooking.resx">
+      <DependentUpon>CancelBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewSportsFacility.resx">
+      <DependentUpon>CreateNewSportsFacility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnquirySportsFacility.resx">
+      <DependentUpon>EnquirySportsFacility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingFacility.resx">
+      <DependentUpon>BookingFacility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewMember.resx">
+      <DependentUpon>CreateNewMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchFacility.resx">
+      <DependentUpon>SearchFacility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchMember.resx">
+      <DependentUpon>SearchMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintainMember.resx">
+      <DependentUpon>MaintainMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintainSportsFacility.resx">
+      <DependentUpon>MaintainSportsFacility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="SFBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SFBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SFBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SFBModel.edmx</DependentUpon>
+      <LastGenOutput>SFBModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SFBModel.edmx.diagram">
+      <DependentUpon>SFBModel.edmx</DependentUpon>
+    </None>
+    <None Include="SFBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SFBModel.edmx</DependentUpon>
+      <LastGenOutput>SFBModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SFBSystem\SFBSystem.csproj">
+      <Project>{a817069e-6b7e-4f16-89bb-dff3ff682c32}</Project>
+      <Name>SFBSystem</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
