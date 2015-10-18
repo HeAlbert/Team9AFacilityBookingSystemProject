@@ -11,6 +11,7 @@ namespace SFBSystemApplicatiopn
     {
         private frmSearchMember searchMember;
         private frmMaintainMember maintainMember;
+        private frmMemberList memberList;
 
         public void selectSearchMember()
         {
@@ -22,6 +23,13 @@ namespace SFBSystemApplicatiopn
         {
             maintainMember = new frmMaintainMember(this);
             maintainMember.Show();
+        }
+
+        public void SelectPrint()
+        {
+            memberList = new frmMemberList();
+            memberList.ShowDialog();
+            
         }
     }
 }

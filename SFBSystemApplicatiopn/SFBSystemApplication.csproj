@@ -32,6 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -41,6 +49,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +66,12 @@
     <Compile Include="Booking.cs">
       <DependentUpon>SFBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BookingReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controller\BookingControl.cs" />
     <Compile Include="CancelBooking.cs">
       <SubType>Form</SubType>
@@ -70,6 +85,7 @@
     <Compile Include="Controller\MaintainFacilityControl.cs" />
     <Compile Include="Controller\MaintianMemberControl.cs" />
     <Compile Include="Controller\MainControl.cs" />
+    <Compile Include="Controller\ReportControl.cs" />
     <Compile Include="CreateNewSportsFacility.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +110,30 @@
     <Compile Include="CreateNewMember.Designer.cs">
       <DependentUpon>CreateNewMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBookingReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBookingReceipt.Designer.cs">
+      <DependentUpon>frmBookingReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMemberList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMemberList.Designer.cs">
+      <DependentUpon>frmMemberList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOccupancyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOccupancyReport.Designer.cs">
+      <DependentUpon>frmOccupancyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrendReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrendReport.Designer.cs">
+      <DependentUpon>frmTrendReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +143,18 @@
     <Compile Include="Controller\NewMemberControl.cs" />
     <Compile Include="Member.cs">
       <DependentUpon>SFBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MemberList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OccupancyReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OccupancyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SearchFacility.cs">
       <SubType>Form</SubType>
@@ -148,12 +200,27 @@
     <Compile Include="SportFacility.cs">
       <DependentUpon>SFBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SportsFacilityBookingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SportsFacilityBookingDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SportType.cs">
       <DependentUpon>SFBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TimeSlot.cs">
       <DependentUpon>SFBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TrendReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrendReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="BookingReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BookingReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CancelBooking.resx">
       <DependentUpon>CancelBooking.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,8 +236,25 @@
     <EmbeddedResource Include="CreateNewMember.resx">
       <DependentUpon>CreateNewMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberList.resx">
+      <DependentUpon>frmMemberList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOccupancyReport.resx">
+      <DependentUpon>frmOccupancyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrendReport.resx">
+      <DependentUpon>frmTrendReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MemberList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OccupancyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OccupancyReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchFacility.resx">
       <DependentUpon>SearchFacility.cs</DependentUpon>
@@ -193,6 +277,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TrendReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TrendReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -220,12 +308,26 @@
       <DependentUpon>SFBModel.edmx</DependentUpon>
       <LastGenOutput>SFBModel.cs</LastGenOutput>
     </None>
+    <None Include="SportsFacilityBookingDataSet.xsc">
+      <DependentUpon>SportsFacilityBookingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SportsFacilityBookingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SportsFacilityBookingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SportsFacilityBookingDataSet.xss">
+      <DependentUpon>SportsFacilityBookingDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SFBSystem\SFBSystem.csproj">

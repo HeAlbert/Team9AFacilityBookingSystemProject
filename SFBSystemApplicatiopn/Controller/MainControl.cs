@@ -16,7 +16,7 @@ namespace SFBSystemApplicatiopn
         private EnquiryFacilityControl enquiryFacilityControl;
         private BookingControl bookingControl;
         private CancelBookingControl cancelBookingControl;
-        
+        private ReportControl reportControl;
         
         public void MainMenu()
         {
@@ -72,6 +72,20 @@ namespace SFBSystemApplicatiopn
             bookingControl = new BookingControl();
             bookingControl.selectNewBooking();
         }
-         
+        public void slectMemberList()
+        {
+            reportControl = new ReportControl();
+            reportControl.selectMemberList();
+        }
+        public void selectTrendReport()
+        {
+            reportControl = new ReportControl();
+            reportControl.selectTrendReport();
+        }
+        public void selectOccupancyReport()
+        {
+            reportControl = new ReportControl();
+            reportControl.selectOccupancyReport();
+        }
     }
 }

@@ -44,6 +44,10 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.msiCancelBooking = new System.Windows.Forms.ToolStripMenuItem();
             this.msiMaintainMember = new System.Windows.Forms.ToolStripMenuItem();
+            this.memberListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.occupancyReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trendReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,9 +169,41 @@
             // 
             // msiMaintainMember
             // 
+            this.msiMaintainMember.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.memberListToolStripMenuItem,
+            this.toolStripMenuItem4,
+            this.occupancyReportToolStripMenuItem,
+            this.trendReportToolStripMenuItem});
             this.msiMaintainMember.Name = "msiMaintainMember";
             this.msiMaintainMember.Size = new System.Drawing.Size(58, 20);
             this.msiMaintainMember.Text = "&Report";
+            this.msiMaintainMember.Click += new System.EventHandler(this.msiMaintainMember_Click);
+            // 
+            // memberListToolStripMenuItem
+            // 
+            this.memberListToolStripMenuItem.Name = "memberListToolStripMenuItem";
+            this.memberListToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.memberListToolStripMenuItem.Text = "&Member List";
+            this.memberListToolStripMenuItem.Click += new System.EventHandler(this.memberListToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(181, 6);
+            // 
+            // occupancyReportToolStripMenuItem
+            // 
+            this.occupancyReportToolStripMenuItem.Name = "occupancyReportToolStripMenuItem";
+            this.occupancyReportToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.occupancyReportToolStripMenuItem.Text = "Occupancy Report";
+            this.occupancyReportToolStripMenuItem.Click += new System.EventHandler(this.occupancyReportToolStripMenuItem_Click);
+            // 
+            // trendReportToolStripMenuItem
+            // 
+            this.trendReportToolStripMenuItem.Name = "trendReportToolStripMenuItem";
+            this.trendReportToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.trendReportToolStripMenuItem.Text = "Trend Report";
+            this.trendReportToolStripMenuItem.Click += new System.EventHandler(this.trendReportToolStripMenuItem_Click);
             // 
             // frmMainMenu
             // 
@@ -204,5 +240,9 @@
         private System.Windows.Forms.ToolStripMenuItem msiMaintainMember;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem enquiryFacilityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem memberListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem occupancyReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem trendReportToolStripMenuItem;
     }
 }

@@ -2,3 +2,8 @@ D:\GitHub\Team9\SportFacilityBookingSystem\SFBSystem\bin\Debug\SFBSystem.dll
 D:\GitHub\Team9\SportFacilityBookingSystem\SFBSystem\bin\Debug\SFBSystem.pdb
 D:\GitHub\Team9\SportFacilityBookingSystem\SFBSystem\obj\Debug\SFBSystem.dll
 D:\GitHub\Team9\SportFacilityBookingSystem\SFBSystem\obj\Debug\SFBSystem.pdb
+C:\Users\e0005440\Source\Repos\Team9AFacilityBookingSystemProject\SFBSystem\bin\Debug\SFBSystem.dll
+C:\Users\e0005440\Source\Repos\Team9AFacilityBookingSystemProject\SFBSystem\bin\Debug\SFBSystem.pdb
+C:\Users\e0005440\Source\Repos\Team9AFacilityBookingSystemProject\SFBSystem\obj\Debug\SFBSystem.dll
+C:\Users\e0005440\Source\Repos\Team9AFacilityBookingSystemProject\SFBSystem\obj\Debug\SFBSystem.pdb
+C:\Users\e0005440\Source\Repos\Team9AFacilityBookingSystemProject\SFBSystem\obj\Debug\SFBSystem.csprojResolveAssemblyReference.cache

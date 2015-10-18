@@ -63,5 +63,25 @@ namespace SFBSystemApplicatiopn
 
         }
 
+        private void msiMaintainMember_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void memberListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mCaller.slectMemberList();
+        }
+
+        private void trendReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mCaller.selectTrendReport();
+        }
+
+        private void occupancyReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mCaller.selectOccupancyReport();
+        }
+
     }
 }
